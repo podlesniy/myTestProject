@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/sumCrd"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:hint="Сумма кредита"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/stavkaCrd"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="55dp"
+        android:hint="Ставка %"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/srokCrd"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:hint="Срок (мес)"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/strah"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="110dp"
+        android:hint="Страховка %"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/avans"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+        android:hint="Аванс %"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/kommis"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="165dp"
+        android:hint="Комиссия %"
+        android:inputType="phone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="__________________________________________________" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="75dp"
+        android:text="Первоначальный взнос: " />
+
+    <TextView
+        android:id="@+id/pervVznos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="75dp"
+        android:text="" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="130dp"
+        android:text="Ежемесячный платёж: " />
+
+    <TextView
+        android:id="@+id/monceDohCrd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="130dp"
+        android:text="" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="185dp"
+        android:text="Переплата по кредиту: " />
+
+    <TextView
+        android:id="@+id/perepl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="185dp"
+        android:text="" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="240dp"
+        android:text="Итоговая сумма погашения: " />
+
+    <TextView
+        android:id="@+id/itogSumPogash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="240dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/errorCrd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"
+        android:text=""
+        android:textColor="@android:color/holo_red_dark"/>
+
+</FrameLayout>

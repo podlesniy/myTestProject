@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/sumVkl"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:inputType="phone"
+        android:hint="Сумма вклада" />
+
+    <EditText
+        android:id="@+id/stavka"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="55dp"
+        android:inputType="phone"
+        android:hint="Ставка %" />
+
+    <EditText
+        android:id="@+id/srok"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:inputType="phone"
+        android:hint="Срок (мес)"/>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="110dp"
+        android:text="Капитализация" />
+
+    <EditText
+        android:id="@+id/popoln"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+        android:inputType="phone"
+        android:hint="Пополнение (мес)" />
+
+    <EditText
+        android:id="@+id/nalog"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="165dp"
+        android:inputType="phone"
+        android:hint="Налог в %" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="__________________________________________________" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="75dp"
+        android:text="Ежемесячный доход: "/>
+
+    <TextView
+        android:id="@+id/monceDoh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="200dp"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/allDohNMonce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="130dp"
+        android:text="Общий доход через N мес: "/>
+
+    <TextView
+        android:id="@+id/allDoh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="130dp"
+        android:text="" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="185dp"
+        android:text="Общая сумма пополнений: "/>
+
+    <TextView
+        android:id="@+id/allPopoln"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="185dp"
+        android:text="" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="240dp"
+        android:text="Итоговая сумма (% + вклад): "/>
+
+    <TextView
+        android:id="@+id/itogSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="200dp"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:text=""/>
+
+</FrameLayout>

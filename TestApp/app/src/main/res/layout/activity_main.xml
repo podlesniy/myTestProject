@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:paddingTop="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  1. Создать приложение с одним экраном. Добавить на экран поле для ввода текста (EditText) и две кнопки. По нажатию на первую кнопку с текстового поля весь введенный текст исчезает. По нажатию на вторую кнопку поле ввода восстанавливает текст, удаленный первой кнопкой." />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  1.1 По повторному нажатию на вторую кнопку, текстовое поле восстанавливает текст, введенный ранее. (Например: введено слово 'мышь' поле очищено, введено слово 'хомяк' поле очищено, нажата восстанавливающая кнопка, появился текст 'хомяк', нажата
+    восстанавливающая кнопка еще раз появился текст 'мышь'). Реализовать сохранение/восстановление пяти состояний."/>
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Введите текст"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textColor="#ff0000"
+        android:visibility="visible"
+        android:text="Нечего востанавливать"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:text="Очистить"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:text="Востановить"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+</LinearLayout>

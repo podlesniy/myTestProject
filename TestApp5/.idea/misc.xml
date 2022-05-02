@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/layout/EditText.xml" value="0.3171875" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/layout/TextView.xml" value="0.3171875" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/layout/ed_text.xml" value="0.33" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/layout/edit_text.xml" value="0.3171875" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/layout/fragment_with_button.xml" value="0.35778985507246375" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/layout/fragment_with_textview.xml" value="0.35778985507246375" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/layout/text_view.xml" value="0.33" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.349" />
+        <entry key="..\:/iT/AndroidStudioProjects/TestApp5/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.349" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

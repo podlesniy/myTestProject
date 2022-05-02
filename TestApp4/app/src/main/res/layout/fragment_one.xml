@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".FragmentOne"
+    android:id="@+id/fragmentOne">
+
+    <TextView
+        android:id="@+id/view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Здравствуйте, "
+        android:textSize="25sp"
+        android:layout_gravity="center|top"/>
+
+    <TextView
+        android:id="@+id/view_old"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-100dp"
+        android:layout_gravity="center"
+        android:text="Полных лет:  "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/view_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Прожито месяцев:  "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/view_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:text="Прожито дней:  "
+        android:textSize="20sp" />
+</FrameLayout>
