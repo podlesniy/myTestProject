@@ -25,6 +25,7 @@ public class DepositFragment extends Fragment {
     TextView allDohNMonce;
 
     CalculateDeposit calculateDeposit = new CalculateDeposit();
+    
     public static DepositFragment newInstance() {
         return new DepositFragment();
     }

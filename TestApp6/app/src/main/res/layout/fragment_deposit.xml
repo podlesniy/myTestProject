@@ -2,6 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
     android:padding="16dp">
 
     <EditText
@@ -9,7 +11,7 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
-        android:inputType="phone"
+        android:inputType="numberDecimal"
         android:hint="Сумма вклада" />
 
     <EditText
@@ -18,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="55dp"
-        android:inputType="phone"
+        android:inputType="numberDecimal"
         android:hint="Ставка %" />
 
     <EditText
@@ -26,7 +28,7 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
-        android:inputType="phone"
+        android:inputType="number"
         android:hint="Срок (мес)"/>
 
     <CheckBox
@@ -42,7 +44,7 @@
         android:layout_width="188dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="165dp"
-        android:inputType="phone"
+        android:inputType="number"
         android:hint="Пополнение (мес)" />
 
     <EditText
@@ -51,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="165dp"
-        android:inputType="phone"
+        android:inputType="numberDecimal"
         android:hint="Налог в %" />
 
     <TextView
