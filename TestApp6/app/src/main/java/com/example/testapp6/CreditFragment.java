@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class CreditFragment extends Fragment {
@@ -21,6 +22,7 @@ public class CreditFragment extends Fragment {
     TextView perepl;
     TextView itogSumPogash;
     TextView errorCrd;
+    FrameLayout frame;
 
     CalculateCredit calculateCredit = new CalculateCredit();
     public static CreditFragment newInstance() {
