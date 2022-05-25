@@ -13,6 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.OutputStreamWriter;
 
 public class BlankFragment extends Fragment implements OnItemClickListener{
 
@@ -22,7 +28,6 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
     private ActivityNavi navi;
     private EditText name;
     private EditText email;
-    public Button add_name;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -39,7 +44,7 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
         View root = inflater.inflate(R.layout.fragment_blank, container, false);
         name = root.findViewById(R.id.add_name);
         email = root.findViewById(R.id.add_email);
-        add_name = root.findViewById(R.id.add);
+        Button add_name = root.findViewById(R.id.add);
         add_name.setOnClickListener(v -> {
             if(!name.getText().toString().equals("") && !email.getText().toString().equals("")) {
                 userAdapter.addUser(name.getText().toString(), email.getText().toString());
@@ -49,7 +54,7 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
         });
         recyclerView = root.findViewById(R.id.list);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
-        userAdapter = new UserAdapter(root.getContext(), Generator.generateName(), Generator.generateEmail(), this);
+        userAdapter = new UserAdapter(root.getContext(), Generator.generateName(), Generator.generateEmail(), Generator.generateIcon(), this);
         recyclerView.setAdapter(userAdapter);
         return root;
     }
