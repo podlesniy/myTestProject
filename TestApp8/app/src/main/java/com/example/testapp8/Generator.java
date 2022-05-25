@@ -33,11 +33,11 @@ public class Generator extends Fragment {
     public static String[] contactInfo(String name) {
         String[] contInf;
         if (name.equals(nameList.get(0))) {
-            contInf = new String[]{nameList.get(0), "+380993110015", emailList.get(0), "Dnepr"};
+            contInf = new String[]{nameList.get(0), "+380994311234", emailList.get(0), "Dnepr"};
         } else if (name.equals(nameList.get(1))) {
-            contInf = new String[]{nameList.get(1), "+380958072245", emailList.get(1), "Dimitrov"};
+            contInf = new String[]{nameList.get(1), "+380955343456", emailList.get(1), "Mirnograd"};
         } else if (name.equals(nameList.get(2))) {
-            contInf = new String[]{nameList.get(2), "+380501231234", emailList.get(2), "Dimitrov"};
+            contInf = new String[]{nameList.get(2), "+380501231234", emailList.get(2), "Mirnograd"};
         } else {
             contInf = new String[]{"Извините","но","пока","не реализовано"};
         }
