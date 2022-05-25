@@ -1,12 +1,9 @@
 package com.example.testapp8;
 
-import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 public class Generator extends Fragment {
@@ -53,14 +50,14 @@ public class Generator extends Fragment {
     }
 
     public static Integer generateImage(String name) {
-        Integer list = 0;
         if (name.equals(nameList.get(0))) {
-            list = R.drawable._0200818_132333;
+            return generateIcon().get(0);
         } else if (name.equals(nameList.get(1))) {
-            list = R.drawable._0200705_164440;
+            return generateIcon().get(1);
         } else if (name.equals(nameList.get(2))) {
-            list = R.drawable._0200705_172139_0_;
+            return generateIcon().get(2);
+        } else {
+            return R.drawable.ic_launcher_foreground;
         }
-        return list;
     }
 }
