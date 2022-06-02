@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlankFragment">
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="215dp"
+        android:layout_marginStart="190dp"
+        android:text="Добавить контакт"/>
+
+    <EditText
+        android:id="@+id/add_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:textSize="20dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginStart="30dp"
+        android:hint="Имя контакта"/>
+
+    <EditText
+        android:id="@+id/add_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:textSize="20dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginStart="30dp"
+        android:hint="Email"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="2. Создать список контактов. Каждый контакт содержит имя, email, адрес, телефон и иконку (или фотку) контакта. Список содержит только иконку, имя и email контакта. При нажатии на контакт - он должен открываться на новом экране с подробной о нем информацией.\n2.1* Добавить возможность добавлять контакты в список на первом экране. (метод у адаптера notifyDataSetChanged())" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp"
+        tools:listitem="@layout/item" />
+
+
+</FrameLayout>
