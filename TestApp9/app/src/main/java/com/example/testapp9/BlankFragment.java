@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.example.testapp9.databinding.FragmentBlankBinding;
+
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.OutputStreamWriter;
@@ -23,11 +26,9 @@ import java.io.OutputStreamWriter;
 public class BlankFragment extends Fragment implements OnItemClickListener{
 
     public static String str;
-    public RecyclerView recyclerView;
     private UserAdapter userAdapter;
     private ActivityNavi navi;
-    private EditText name;
-    private EditText email;
+    private FragmentBlankBinding binding;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -41,22 +42,18 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_blank, container, false);
-        name = root.findViewById(R.id.add_name);
-        email = root.findViewById(R.id.add_email);
-        Button add_name = root.findViewById(R.id.add);
-        add_name.setOnClickListener(v -> {
-            if(!name.getText().toString().equals("") && !email.getText().toString().equals("")) {
-                userAdapter.addUser(name.getText().toString(), email.getText().toString());
-                name.setText("");
-                email.setText("");
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_blank, container, false);
+        binding.add.setOnClickListener(v -> {
+            if(!binding.addName.getText().toString().equals("") && !binding.addEmail.getText().toString().equals("")) {
+                userAdapter.addUser(binding.addName.getText().toString(), binding.addEmail.getText().toString());
+                binding.addName.setText("");
+                binding.addEmail.setText("");
             }
         });
-        recyclerView = root.findViewById(R.id.list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
-        userAdapter = new UserAdapter(root.getContext(), Generator.generateName(), Generator.generateEmail(), Generator.generateIcon(), this);
-        recyclerView.setAdapter(userAdapter);
-        return root;
+        binding.list.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
+        userAdapter = new UserAdapter(binding.getRoot().getContext(), Generator.generateName(), Generator.generateEmail(), Generator.generateIcon(), this);
+        binding.list.setAdapter(userAdapter);
+        return binding.getRoot();
     }
 
     @Override

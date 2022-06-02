@@ -2,6 +2,7 @@ package com.example.testapp9;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,35 +11,29 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.testapp9.databinding.FragmentBlank2Binding;
+import com.example.testapp9.databinding.FragmentBlankBinding;
+
 
 public class BlankFragment2 extends Fragment {
 
-    TextView name;
-    TextView email;
-    TextView phone;
-    TextView adr;
-    ImageView imageView;
+    private FragmentBlank2Binding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_blank2, container, false);
-        imageView = root.findViewById(R.id.imageView);
-        name = root.findViewById(R.id.name);
-        email = root.findViewById(R.id.email);
-        phone = root.findViewById(R.id.phone);
-        adr = root.findViewById(R.id.adr);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_blank2, container, false);
 
         viewContact(Generator.contactInfo(BlankFragment.str));
 
-        return root;
+        return binding.getRoot();
     }
 
     public void viewContact(String[] contact){
-        name.setText(contact[0]);
-        phone.setText(contact[1]);
-        email.setText(contact[2]);
-        adr.setText(contact[3]);
-        imageView.setImageResource(Generator.generateImage(BlankFragment.str));
+        binding.name.setText(contact[0]);
+        binding.phone.setText(contact[1]);
+        binding.email.setText(contact[2]);
+        binding.adr.setText(contact[3]);
+        binding.imageView.setImageResource(Generator.generateImage(BlankFragment.str));
     }
 }
