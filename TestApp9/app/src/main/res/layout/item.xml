@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.testapp9.UserModel" />
+    </data>
+
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -25,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            tools:text="Name"/>
+            android:text="@{user.name}"
+            tools:text="name"/>
 
         <TextView
             android:id="@+id/item_email"
@@ -33,6 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
+            android:text="@{user.email}"
             tools:text="email"/>
         </LinearLayout>
 

@@ -7,21 +7,13 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import com.example.testapp9.databinding.FragmentBlankBinding;
 
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.OutputStreamWriter;
 
 public class BlankFragment extends Fragment implements OnItemClickListener{
 
@@ -41,7 +33,7 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_blank, container, false);
         binding.add.setOnClickListener(v -> {
             if(!binding.addName.getText().toString().equals("") && !binding.addEmail.getText().toString().equals("")) {
@@ -57,8 +49,8 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
     }
 
     @Override
-    public void onItemClick(String userName) {
-        str = userName;
+    public void onItemClick(UserModel userName) {
+        str = userName.name;
         navi.showFragment();
     }
 }

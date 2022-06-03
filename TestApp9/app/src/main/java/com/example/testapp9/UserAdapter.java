@@ -4,11 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
+
+
+import com.example.testapp9.databinding.ItemBinding;
+
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
@@ -32,13 +35,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
-        return new UserViewHolder(v, listener);
+        ItemBinding b = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item, parent, false);
+        return new UserViewHolder(b, listener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
-        holder.bind(users.get(position), position); //holder.name.setText(userName);
+        holder.bind(users.get(position)); //holder.name.setText(userName);
     }
 
     @Override
@@ -49,30 +52,22 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     static class UserViewHolder extends RecyclerView.ViewHolder {
 
         OnItemClickListener listener;
-        View root;
-        TextView name;
-        TextView email;
-        ImageView imageView;
-        //ItemBinding binding;
+        ItemBinding binding;
 
-        public UserViewHolder(@NonNull View itemView, OnItemClickListener listener) {
-            super(itemView);
+
+        public UserViewHolder(ItemBinding b, OnItemClickListener listener) {
+            super(b.getRoot());
+            this.binding = b;
             this.listener = listener;
-            //binding = DataBindingUtil.findBinding(itemView);
-            root = itemView.findViewById(R.id.root);
-            name = itemView.findViewById(R.id.item_name);
-            email = itemView.findViewById(R.id.item_email);
-            imageView = itemView.findViewById(R.id.image_contact);
         }
 
-        public void bind(UserModel user, int position) {
-            name.setText(user.name);
-            email.setText(user.email);
-            imageView.setImageResource(user.image);
-            root.setOnClickListener(new View.OnClickListener() {
+        public void bind(UserModel user) {
+            binding.setUser(user);
+            binding.imageContact.setImageResource(user.image);
+            binding.root.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onItemClick(user.name);
+                    listener.onItemClick(user);
                 }
             });
         }
