@@ -16,9 +16,9 @@ import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
 
-    private Context context;
-    private List<UserModel> users;
-    private OnItemClickListener listener;
+    private final Context context;
+    private final List<UserModel> users;
+    private final OnItemClickListener listener;
 
     public UserAdapter(Context context, List<UserModel> users, OnItemClickListener listener) {
         this.context = context;
@@ -28,7 +28,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     public void addUser(UserModel user) {
         users.add(user);
-        notifyDataSetChanged(); // notifyItemInserted(users.size() - 1);
+        notifyItemInserted(users.size() - 1); // notifyDataSetChanged();
 
     }
 

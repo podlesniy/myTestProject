@@ -23,7 +23,7 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
     private UserAdapter userAdapter;
     private ActivityNavi navi;
     private FragmentBlankBinding binding;
-    private List<UserModel> users = Generator.generateUser();
+    private final List<UserModel> users = Generator.generateUser();
 
     @Override
     public void onAttach(@NonNull Context context) {
