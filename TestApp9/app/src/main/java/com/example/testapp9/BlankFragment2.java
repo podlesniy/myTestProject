@@ -29,11 +29,11 @@ public class BlankFragment2 extends Fragment {
         return binding.getRoot();
     }
 
-    public void viewContact(String[] contact){
-        binding.name.setText(contact[0]);
-        binding.phone.setText(contact[1]);
-        binding.email.setText(contact[2]);
-        binding.adr.setText(contact[3]);
-        binding.imageView.setImageResource(Generator.generateImage(BlankFragment.str));
+    public void viewContact(UserModel contact){
+            binding.name.setText(contact.name);
+            binding.phone.setText(contact.phone);
+            binding.email.setText(contact.email);
+            binding.adr.setText(contact.adr);
+            binding.imageView.setImageResource(contact.image);
     }
 }

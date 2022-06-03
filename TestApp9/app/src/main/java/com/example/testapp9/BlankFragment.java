@@ -45,13 +45,13 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_blank, container, false);
         binding.add.setOnClickListener(v -> {
             if(!binding.addName.getText().toString().equals("") && !binding.addEmail.getText().toString().equals("")) {
-                userAdapter.addUser(binding.addName.getText().toString(), binding.addEmail.getText().toString());
+                userAdapter.addUser(new UserModel(binding.addName.getText().toString(), binding.addEmail.getText().toString(), null, null, R.drawable.ic_launcher_foreground));
                 binding.addName.setText("");
                 binding.addEmail.setText("");
             }
         });
         binding.list.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
-        userAdapter = new UserAdapter(binding.getRoot().getContext(), Generator.generateName(), Generator.generateEmail(), Generator.generateIcon(), this);
+        userAdapter = new UserAdapter(binding.getRoot().getContext(), Generator.generateUser(), this);
         binding.list.setAdapter(userAdapter);
         return binding.getRoot();
     }
