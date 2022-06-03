@@ -54,7 +54,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         OnItemClickListener listener;
         ItemBinding binding;
 
-
         public UserViewHolder(ItemBinding b, OnItemClickListener listener) {
             super(b.getRoot());
             this.binding = b;

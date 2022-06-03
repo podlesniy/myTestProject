@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 
 import com.example.testapp9.databinding.FragmentBlankBinding;
 
+import java.util.List;
+
 
 public class BlankFragment extends Fragment implements OnItemClickListener{
 
@@ -21,6 +23,7 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
     private UserAdapter userAdapter;
     private ActivityNavi navi;
     private FragmentBlankBinding binding;
+    private List<UserModel> users = Generator.generateUser();
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -43,7 +46,7 @@ public class BlankFragment extends Fragment implements OnItemClickListener{
             }
         });
         binding.list.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
-        userAdapter = new UserAdapter(binding.getRoot().getContext(), Generator.generateUser(), this);
+        userAdapter = new UserAdapter(binding.getRoot().getContext(), users, this);
         binding.list.setAdapter(userAdapter);
         return binding.getRoot();
     }
