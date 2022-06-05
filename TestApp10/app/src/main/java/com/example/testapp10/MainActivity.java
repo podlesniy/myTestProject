@@ -41,7 +41,13 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             @Override
             public void onClick(View view) {
                 if ((!editText.getText().toString().equals(""))) {
-                    changeDate(editText.getText().toString());
+                    String str = editText.getText().toString().substring(6);
+                    int i = Integer.parseInt(str);
+                    if (i <= 2012) {
+                        Toast.makeText(MainActivity.this, "От 2013 года...", Toast.LENGTH_SHORT).show();
+                    } else {
+                        changeDate(editText.getText().toString());
+                    }
                     editText.setText("");
                 }
             }
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                             recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
                             ArrayList<RequestModel.ExchangeRate> list = new ArrayList<>();
-                            for(int i = 1; i < 15; i++) {
+                            for(int i = 1; i < response.body().getExchangeRate().size(); i++) {
                                 list.add(response.body().getExchangeRate().get(i));
                             }
                             countryAdapter = new CountryAdapter(MainActivity.this, list, MainActivity.this);
