@@ -18,6 +18,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity implements OnItemClickListener{
 
@@ -36,20 +37,27 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         button = findViewById(R.id.ok);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
         String date = simpleDateFormat.format(new Date(System.currentTimeMillis()));
+        SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("yyyy");
+        String year = simpleDateFormat1.format(new Date(System.currentTimeMillis()));
+        int yearInt = Integer.parseInt(year);
         changeDate(date);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ((!editText.getText().toString().equals(""))) {
-                    String str = editText.getText().toString().substring(6);
-                    int i = Integer.parseInt(str);
-                    if (i <= 2012) {
-                        Toast.makeText(MainActivity.this, "От 2013 года...", Toast.LENGTH_SHORT).show();
+                if ((!editText.getText().toString().equals("")) && (editText.getText().toString().length() == 10) && (editText.getText().toString().matches("^[0-9.]+")) && (editText.getText().toString().indexOf(".") == 2) && (editText.getText().toString().lastIndexOf(".") == 5)) {
+                    if (Integer.parseInt(editText.getText().toString().substring(6)) > yearInt) {
+                        Toast.makeText(MainActivity.this, "Сначало доживи до " + editText.getText().toString().substring(6) , Toast.LENGTH_SHORT).show();
+                    } else if ((Integer.parseInt(editText.getText().toString().substring(0,2)) == 0) || (Integer.parseInt(editText.getText().toString().substring(0,2)) > 31)) {
+                        Toast.makeText(MainActivity.this, editText.getText().toString().substring(0,2) + " - день? Серъёзно?", Toast.LENGTH_SHORT).show();
+                    } else if ((Integer.parseInt(editText.getText().toString().substring(3,5)) == 0) || (Integer.parseInt(editText.getText().toString().substring(3,5)) > 12)) {
+                        Toast.makeText(MainActivity.this, editText.getText().toString().substring(3,5) + " - месяц? Серъёзно?", Toast.LENGTH_SHORT).show();
                     } else {
                         changeDate(editText.getText().toString());
                     }
-                    editText.setText("");
+                } else {
+                    Toast.makeText(MainActivity.this, "Введите дату в формате 'dd.mm.yyyy'", Toast.LENGTH_SHORT).show();
                 }
+                editText.setText("");
             }
         });
     }
@@ -74,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                             for(int i = 1; i < response.body().getExchangeRate().size(); i++) {
                                 list.add(response.body().getExchangeRate().get(i));
                             }
+
                             countryAdapter = new CountryAdapter(MainActivity.this, list, MainActivity.this);
                             recyclerView.setAdapter(countryAdapter);
                         } else {
