@@ -23,6 +23,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.CountryH
     private final Context context;
     private final List<Country> list = new ArrayList<>();
     private final OnItemClickListener listener;
+    MainActivity mainActivity;
 
     public CountryAdapter(Context context, OnItemClickListener listener) {
         this.context = context;

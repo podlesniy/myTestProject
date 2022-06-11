@@ -12,6 +12,7 @@ import com.example.testapp11.databinding.ActivityMainBinding;
 import com.example.testapp11.network.ApiService;
 import com.example.testapp11.network.model.Country;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private ActivityMainBinding binding;
     private CountryAdapter adapter;
     static Country countries;
-    List<Country> country;
+    List<Country> country = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,21 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     public void showInfo(List<Country> countries) {
 //        Toast.makeText(MainActivity.this, countries.get(0).name, Toast.LENGTH_SHORT).show();
-            adapter.update(countries);
+        adapter.update(countries);
+        binding.ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                country.clear();
+                for (int i = 0; i < countries.size(); i++) {
+                    if (countries.get(i).name.toLowerCase().contains(binding.enterText.getText().toString()) || countries.get(i).name.toUpperCase().contains(binding.enterText.getText().toString()) || countries.get(i).name.contains(binding.enterText.getText().toString())) {
+                        country.add(countries.get(i));
+                    } else if (binding.enterText.getText().toString().equals("")){
+                        adapter.update(countries);
+                    }
+                }
+                adapter.update(country);
+            }
+        });
 
     }
 
