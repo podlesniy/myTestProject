@@ -4,26 +4,21 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.testapp11.databinding.ActivityMain2Binding;
 import com.example.testapp11.databinding.ItemCountryBinding;
 import com.example.testapp11.network.model.Country;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.CountryHolder> {
 
     private final Context context;
     private final List<Country> list = new ArrayList<>();
     private final OnItemClickListener listener;
-    MainActivity mainActivity;
 
     public CountryAdapter(Context context, OnItemClickListener listener) {
         this.context = context;
@@ -41,6 +36,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.CountryH
     public void onBindViewHolder(@NonNull CountryHolder holder, int position) {
         Country country = list.get(position);
         holder.bind(country);
+
     }
 
     @Override

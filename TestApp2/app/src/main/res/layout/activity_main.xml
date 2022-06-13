@@ -12,15 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:text="2. Создать приложение с одним экраном. 5 полей для ввода (EditText) и одну кнопку (Button). Поля (логин, email, номер телефона, пароль, повторный пароль) разместить по центру, друг под другом, кнопку - внизу экрана. По нажатию на кнопку реализовать валидацию полей (должны быть заполнены все поля, пароли должны совпадать). Уведомить пользователя о результате (например 'валидация пройдена', 'введите логин', 'пароли не совпадают' пр.)" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_gravity="bottom"
-        android:text="2.1* Проверять валидность email и номера телефона в международном формате (+380501234567)
-" />
+        android:layout_weight="0"
+        android:text="2. Создать приложение с одним экраном. 5 полей для ввода (EditText) и одну кнопку (Button). Поля (логин, email, номер телефона, пароль, повторный пароль) разместить по центру, друг под другом, кнопку - внизу экрана. По нажатию на кнопку реализовать валидацию полей (должны быть заполнены все поля, пароли должны совпадать). Уведомить пользователя о результате (например 'валидация пройдена', 'введите логин', 'пароли не совпадают' пр.)
+    \n2.1* Проверять валидность email и номера телефона в международном формате (+380501234567)" />
 
     <EditText
         android:id="@+id/personName"
@@ -66,7 +60,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/login"
