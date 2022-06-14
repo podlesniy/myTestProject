@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     }
 
     public void showInfo(List<Country> countries) {
-//        Toast.makeText(MainActivity.this, countries.get(0).name, Toast.LENGTH_SHORT).show();
         adapter.update(countries);
         binding.ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +76,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     @Override
     public void onItemClick(Country country) {
         countries = country;
-        startActivity(new Intent("com.example.mainactivity2"));
+        startActivity(new Intent(this, MainActivity2.class));
     }
 }

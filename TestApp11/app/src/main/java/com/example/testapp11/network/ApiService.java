@@ -11,6 +11,8 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public class ApiService {
 
@@ -20,6 +22,9 @@ public class ApiService {
     public interface CountryApi {
         @GET("all")
         Observable<List<Country>> getAllCountries();
+
+        @GET("name/{country_name}")
+        Observable<List<Country>> getCountryByName(@Path("country_name") String countryName, @Query("fullText") boolean fullText);
     }
 
     static {
@@ -39,6 +44,10 @@ public class ApiService {
 
     public static Observable<List<Country>> getData(){
         return countryApi.getAllCountries();
+    }
+
+    public static Observable<List<Country>> getCountryByName(String countryName) {
+        return countryApi.getCountryByName(countryName, true);
     }
 
 }

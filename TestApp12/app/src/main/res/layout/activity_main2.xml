@@ -146,12 +146,6 @@
                     tools:text="area" />
 
             </LinearLayout>
-
-            <ImageView
-                android:id="@+id/image_flag"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher_foreground"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

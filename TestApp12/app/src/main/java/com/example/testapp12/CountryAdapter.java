@@ -1,8 +1,6 @@
 package com.example.testapp12;
 
-import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +63,6 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.CountryH
         public void bind(Country countries) {
             binding.countryName.setText(countries.name);
             binding.countryCapital.setText(countries.capital);
-//            GlideApp.with(binding.root.getContext()).load("http://goo.gl/gEgYUd").apply(RequestOptions.centerCropTransform()).into(binding.imageFlag);
             binding.root.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
