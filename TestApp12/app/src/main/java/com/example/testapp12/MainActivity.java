@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private ActivityMainBinding binding;
     private CountryAdapter adapter;
     static Country countries;
-    List<Country> country = new ArrayList<>();
+    List<Country> countryFiltered = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +47,15 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         binding.ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                country.clear();
-                for (int i = 0; i < countries.size(); i++) {
-                    if (countries.get(i).name.toLowerCase().contains(binding.enterText.getText().toString()) || countries.get(i).name.toUpperCase().contains(binding.enterText.getText().toString()) || countries.get(i).name.contains(binding.enterText.getText().toString())) {
-                        country.add(countries.get(i));
+                countryFiltered.clear();
+                for (Country country : countries) {
+                    if (country.name.toLowerCase().contains(binding.enterText.getText().toString()) || country.name.toUpperCase().contains(binding.enterText.getText().toString()) || country.name.contains(binding.enterText.getText().toString())) {
+                        countryFiltered.add(country);
                     } else if (binding.enterText.getText().toString().equals("")){
                         adapter.update(countries);
                     }
                 }
-                adapter.update(country);
+                adapter.update(countryFiltered);
             }
         });
 
