@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         adapter.update(countries);
         Filtered.filteredByName(countries, binding.enterName, binding.okName, countryFiltered, adapter);
         Filtered.filteredByCapital(countries, binding.enterCapital, binding.okCapital, countryFiltered, adapter);
+        Filtered.filteredByPopulation(countries, binding.enterPopulation, binding.okPopulation, countryFiltered, adapter);
+        Filtered.filteredByArea(countries, binding.enterArea, binding.okArea, countryFiltered, adapter);
 
     }
 

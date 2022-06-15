@@ -42,11 +42,6 @@ public class MainActivity2 extends AppCompatActivity {
                 }, throwable -> {
                     Toast.makeText(MainActivity2.this, "Error", Toast.LENGTH_SHORT).show();
                 }));
-//        setView(binding.name, binding.textView1, MainActivity.countries.name);
-//        setView(binding.capital, binding.textView2, MainActivity.countries.capital);
-//        setView(binding.region, binding.textView3, MainActivity.countries.region);
-//        setView(binding.population, binding.textView4, String.valueOf(MainActivity.countries.population));
-//        setView(binding.area, binding.textView5, String.valueOf(MainActivity.countries.area));
     }
 
     public void setView(TextView view, TextView view1, String countries) {

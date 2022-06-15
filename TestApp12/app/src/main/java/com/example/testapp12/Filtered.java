@@ -52,16 +52,52 @@ public class Filtered {
         });
     }
 
-//    public static void filteredByPopulation(List<Country> countries, EditText editText, Button button, List<Country> countryFiltered, CountryAdapter adapter) {
-//        double pop = Double.parseDouble(editText.getText().toString());
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                countryFiltered.clear();
-//                for (Country country : countries) {
-//                    if (country.population >= )
-//                }
-//            }
-//        });
-//    }
+    public static void filteredByPopulation(List<Country> countries, EditText editText, Button button, List<Country> countryFiltered, CountryAdapter adapter) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countryFiltered.clear();
+                double pop = 0;
+                if (!editText.getText().toString().isEmpty()) {
+                    pop = Double.parseDouble(editText.getText().toString());
+                }
+                for (Country country : countries) {
+                    if ((country.population >= pop - ((pop * 15.0) / 100))
+                            && (country.population <= pop + ((pop * 15.0) / 100)))
+                    {
+                        countryFiltered.add(country);
+                    }
+                }
+                adapter.update(countryFiltered);
+                if (editText.getText().toString().equals("")) {
+                    adapter.update(countries);
+                }
+            }
+        });
+    }
+
+    public static void filteredByArea(List<Country> countries, EditText editText, Button button, List<Country> countryFiltered, CountryAdapter adapter) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countryFiltered.clear();
+                double area = 0;
+                if (!editText.getText().toString().isEmpty()) {
+                    area = Double.parseDouble(editText.getText().toString());
+                }
+
+                for (Country country : countries) {
+                    if ((!String.format("%s", country.area).equals("null")) && (country.area >= area - ((area * 15.0) / 100))
+                            && (country.area <= area + ((area * 15.0) / 100))) {
+                        countryFiltered.add(country);
+                    }
+                }
+                adapter.update(countryFiltered);
+                if (editText.getText().toString().equals("")) {
+                    adapter.update(countries);
+                }
+            }
+        });
+    }
+
 }
