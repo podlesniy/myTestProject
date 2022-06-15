@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.testapp12.databinding.ActivityMainBinding;
@@ -44,20 +47,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     public void showInfo(List<Country> countries) {
         adapter.update(countries);
-        binding.ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                countryFiltered.clear();
-                for (Country country : countries) {
-                    if (country.name.toLowerCase().contains(binding.enterText.getText().toString()) || country.name.toUpperCase().contains(binding.enterText.getText().toString()) || country.name.contains(binding.enterText.getText().toString())) {
-                        countryFiltered.add(country);
-                    } else if (binding.enterText.getText().toString().equals("")){
-                        adapter.update(countries);
-                    }
-                }
-                adapter.update(countryFiltered);
-            }
-        });
+        Filtered.filteredByName(countries, binding.enterName, binding.okName, countryFiltered, adapter);
+        Filtered.filteredByCapital(countries, binding.enterCapital, binding.okCapital, countryFiltered, adapter);
 
     }
 
@@ -78,4 +69,5 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         countries = country;
         startActivity(new Intent(this, MainActivity2.class));
     }
+
 }
