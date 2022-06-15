@@ -68,25 +68,22 @@ public class Filtered {
     }
 
     public static void filteredByArea(List<Country> countries, EditText editText, Button button, List<Country> countryFiltered, CountryAdapter adapter) {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                countryFiltered.clear();
-                double area = 0;
-                if (!editText.getText().toString().isEmpty()) {
-                    area = Double.parseDouble(editText.getText().toString());
-                }
+        button.setOnClickListener(v -> {
+            countryFiltered.clear();
+            double area = 0;
+            if (!editText.getText().toString().isEmpty()) {
+                area = Double.parseDouble(editText.getText().toString());
+            }
 
-                for (Country country : countries) {
-                    if ((!String.format("%s", country.area).equals("null")) && (country.area >= area - ((area * 15.0) / 100))
-                            && (country.area <= area + ((area * 15.0) / 100))) {
-                        countryFiltered.add(country);
-                    }
+            for (Country country : countries) {
+                if ((!String.format("%s", country.area).equals("null")) && (country.area >= area - ((area * 15.0) / 100))
+                        && (country.area <= area + ((area * 15.0) / 100))) {
+                    countryFiltered.add(country);
                 }
-                adapter.update(countryFiltered);
-                if (editText.getText().toString().equals("")) {
-                    adapter.update(countries);
-                }
+            }
+            adapter.update(countryFiltered);
+            if (editText.getText().toString().equals("")) {
+                adapter.update(countries);
             }
         });
     }
