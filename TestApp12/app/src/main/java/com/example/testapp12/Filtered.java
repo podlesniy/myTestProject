@@ -1,6 +1,5 @@
 package com.example.testapp12;
 
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
