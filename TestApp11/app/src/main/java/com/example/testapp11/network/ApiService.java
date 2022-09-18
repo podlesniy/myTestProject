@@ -16,7 +16,7 @@ import retrofit2.http.Query;
 
 public class ApiService {
 
-    private static final String END_POINT = "https://restcountries.com/v2/";
+    private static final String END_POINT = "https://www.thecocktaildb.com/api/json/v1/1/";
     private static CountryApi countryApi;
 
     public interface CountryApi {
@@ -25,6 +25,9 @@ public class ApiService {
 
         @GET("name/{country_name}")
         Observable<List<Country>> getCountryByName(@Path("country_name") String countryName, @Query("fullText") boolean fullText);
+
+        @GET("filter.php")
+        Observable<Country> getCocktail(@Query("a") String type);
     }
 
     static {
@@ -42,10 +45,13 @@ public class ApiService {
         countryApi = retrofit.create(CountryApi.class);
     }
 
-    public static Observable<List<Country>> getData(){
-        return countryApi.getAllCountries();
+    public static Observable<Country> getAllCocktail(){
+        return countryApi.getCocktail("Alcoholic");
     }
 
+    public static Observable<List<Country>> getData() {
+        return countryApi.getAllCountries();
+    }
     public static Observable<List<Country>> getCountryByName(String countryName) {
         return countryApi.getCountryByName(countryName, true);
     }

@@ -49,7 +49,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         String userName = users.get(position);
         String userEmail = emails.get(position);
         Integer userImage = imageView.get(position);
-        //holder.name.setText(userName);
+        holder.name.setText(userName);
         holder.bind(userName,userEmail,userImage);
     }
 
